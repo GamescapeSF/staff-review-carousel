@@ -7,7 +7,9 @@ body {
 	margin: 0;
 	background-color: white;
 }
-
+.slider-container {
+	padding-top: 0.5em;
+}
 /* Slider wrapper */
 .slider {
 	padding: 20px 40px;
@@ -68,13 +70,13 @@ body {
 .slick-dots {
 	font-size: 20px;
 	position: absolute;
-	bottom: 0;
+	bottom: -2em;
 	left: 50%;
 	transform: translateX(-50%);
 	display: flex !important;
 	flex-wrap: wrap;
 	justify-content: center;
-	padding-top: 1em 0;
+	padding: 1rem 0;
 	max-width: 100%;
 	box-sizing: border-box;
 }

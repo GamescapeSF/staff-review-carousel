@@ -11,12 +11,11 @@ $(document).ready(function () {
 	// Dynamically build responsive breakpoints based on how many cards you have
 	function getResponsiveSettings(cardCount) {
 		const breakpoints = [
-			{ breakpoint: 1440, slides: 5 },
-			{ breakpoint: 1024, slides: 4 },
-			{ breakpoint: 768, slides: 3 },
-			{ breakpoint: 640, slides: 2 }
+			{ breakpoint: 1024, slides: 3 },
+			{ breakpoint: 768, slides: 2 },
+			{ breakpoint: 640, slides: 1 }
 		];
-
+	
 		return breakpoints
 			.filter(bp => cardCount >= bp.slides)
 			.map(bp => ({
@@ -26,7 +25,7 @@ $(document).ready(function () {
 				}
 			}));
 	}
-
+		
 	function createSkeletonSlide() {
 		return `
 			<div class="slide">
@@ -38,14 +37,23 @@ $(document).ready(function () {
 		`;
 	}
 
-	function loadSkeletons(count = data.length) {
+	function getSlidesToShowForCurrentViewport(dataLength) {
+		const width = window.innerWidth;
+	
+		if (width >= 1024 && dataLength >= 3) return 3;
+		if (width >= 768 && dataLength >= 2) return 2;
+		if (width >= 640 && dataLength >= 1) return 1;
+	
+		return 1;
+	}
+	function loadSkeletons(count) {
 		for (let i = 0; i < count; i++) {
 			$slider.append(createSkeletonSlide());
 		}
 	}
 
-	// STEP 1: Add skeletons immediately
-	loadSkeletons(data.length);
+	const visibleSkeletons = getSlidesToShowForCurrentViewport(data.length);
+	loadSkeletons(visibleSkeletons);
 
 	// STEP 2: Init Slick AFTER skeletons are in
 	$slider.slick({
@@ -55,7 +63,7 @@ $(document).ready(function () {
 		autoplaySpeed: 8000,
 		centerMode: true,
 		centerPadding: '0px',
-		arrows: true,
+		arrows: false,
 		dots: true,
 		mobileFirst: true,
 		slidesToShow: 1,
