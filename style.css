@@ -1,0 +1,174 @@
+html body {
+	min-height: 300px;
+	max-height: 300px;
+}
+
+body {
+	margin: 0;
+	background-color: white;
+}
+
+/* Slider wrapper */
+.slider {
+	padding: 20px 40px;
+	margin: 0 auto;
+	width: 100%;
+	box-sizing: border-box;
+	padding-bottom: 30px;
+	position: relative;
+	height: auto !important;
+}
+
+/* Track & list should grow with content */
+.slick-track,
+.slick-list {
+	height: auto !important;
+	overflow: visible !important; /* so shadows and hovers can breathe */
+	box-sizing: border-box;
+}
+
+/* Slide container */
+.slide {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 0 12px;
+	box-sizing: border-box;
+	height: auto;
+}
+
+/* Arrows */
+.slick-prev, .slick-next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 50px;
+	height: 50px;
+	z-index: 8;
+	border-radius: 3px;
+	background: rgb(156, 14, 4) !important;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.slick-prev {
+	left: 20px;
+}
+.slick-next {
+	right: 20px;
+}
+.slick-prev:before,
+.slick-next:before {
+	display: none !important;
+}
+
+/* Dots styling */
+.slick-dots {
+	font-size: 20px;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex !important;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-top: 1em 0;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+.slick-dots li {
+	display: inline-block;
+	margin: 0 5px;
+}
+.slick-dots li button:before {
+	color: grey;
+	opacity: 0.5;
+}
+.slick-dots li.slick-active button:before {
+	color: #9c0e04;
+}
+
+/* Card styles */
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-decoration: none;
+	color: inherit;
+	background: white;
+	border-radius: 12px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	overflow: hidden;
+	width: 200px;
+	margin: 0 auto;
+	transition: transform 0.2s ease;
+	height: auto;
+}
+
+.card:hover {
+	transform: scale(1.20);
+	z-index: 2;
+}
+
+/* Card image */
+.card-image {
+	width: 100%;
+	height: 150px;
+	background-color: #e0e0e0;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.card-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+.card:hover .card-image img {
+	transform: scale(1.1);
+}
+
+/* Card title */
+.card-title {
+	font-size: 14px;
+	font-weight: 600;
+	padding: 12px;
+	text-align: center;
+	height: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Skeleton styling */
+.skeleton-box {
+	animation: pulse 1.5s infinite ease-in-out;
+	width: 100%;
+	height: 130px;
+	background: #e0e0e0;
+}
+.skeleton-text {
+	width: 60%;
+	height: 0;
+	margin: 10px auto;
+	background: #e0e0e0;
+	border-radius: 4px;
+	animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Animation */
+@keyframes pulse {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.4;
+	}
+	100% {
+		opacity: 1;
+	}
+}
