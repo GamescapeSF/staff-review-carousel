@@ -55,7 +55,6 @@ $(document).ready(function () {
 		dots: true,
 		mobileFirst: true,
 		slidesToShow: 1,
-		// Use default responsive — will be overridden later if needed
 		responsive: []
 	});
 

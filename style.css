@@ -1,6 +1,7 @@
 html body {
 	min-height: 300px;
 	max-height: 300px;
+	overflow-x: hidden;
 }
 
 body {
@@ -12,7 +13,7 @@ body {
 }
 /* Slider wrapper */
 .slider {
-	padding: 20px 40px;
+	padding-inline: 1rem;
 	margin: 0 auto;
 	width: 100%;
 	box-sizing: border-box;
@@ -173,4 +174,10 @@ body {
 	100% {
 		opacity: 1;
 	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
