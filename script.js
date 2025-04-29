@@ -107,7 +107,7 @@ $(document).ready(function () {
 			data.forEach(item => {
 				const slideHTML = `
 					<div class="slide">
-						<a href="https://${item.url}" class="card">
+						<a href="https://${item.url}" target="_top" class="card">
 							<div class="card-image">
 								<img src="${item.imageUrl}" alt="${item.title}" />
 							</div>
