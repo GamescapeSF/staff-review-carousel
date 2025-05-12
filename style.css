@@ -16,7 +16,7 @@ body {
 	font-weight: 800;
 	text-align: center;
 	margin-top: 1.5em;
-	margin-bottom: 0.75em;
+	margin-bottom: 1.5em;
 	color: #333;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
@@ -84,7 +84,7 @@ body {
 .slick-dots {
 	font-size: 20px;
 	position: absolute;
-	bottom: -2em;
+	bottom: -3em;
 	left: 50%;
 	transform: translateX(-50%);
 	display: flex !important;
@@ -154,7 +154,6 @@ body {
 	font-weight: 600;
 	padding: 12px;
 	text-align: center;
-	height: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
